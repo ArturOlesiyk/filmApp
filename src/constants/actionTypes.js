@@ -1,1 +1,1 @@
-export const POPULAR_FILMS = 'POPULAR_FILMS'
+export const FILMS = 'FILMS'

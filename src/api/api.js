@@ -10,8 +10,8 @@ const initial = axios.create({
 })
 
 export const filmsAPI = {
-  getPopular(page) {
-    return initial.get(`movie/popular`)
+  getFilms(filmType, page) {
+    return initial.get(filmType)
       .then(response => {
         return response.data.results
       })

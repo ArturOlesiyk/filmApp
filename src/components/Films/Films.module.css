@@ -1,0 +1,4 @@
+.filmsContainer{
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,13 +1,13 @@
 import {filmsAPI} from "../../api/api";
-import {POPULAR_FILMS} from "../../constants/actionTypes";
+import {FILMS} from "../../constants/actionTypes";
 
-export const setPopularMovies = (films) => ({type: POPULAR_FILMS, films});
+export const setFilms = (films) => ({type: FILMS, films})
 
-export const getPopularMovies = () => {
+export const getFilms = (filmType) => {
   return (dispatch) => {
-    filmsAPI.getPopular()
+    filmsAPI.getFilms(filmType)
       .then(results => {
-        dispatch(setPopularMovies(results))
+        dispatch(setFilms(results))
       })
   }
 }
