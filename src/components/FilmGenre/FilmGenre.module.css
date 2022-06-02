@@ -1,0 +1,15 @@
+.genres{
+
+}
+.genres ol{
+    display: flex;
+    padding: 0;
+}
+.genres li{
+    list-style: none;
+    font-family: Arial;
+    padding-left: 2px;
+}
+.genres li:before{
+    content: "|";
+}

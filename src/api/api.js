@@ -16,4 +16,16 @@ export const filmsAPI = {
         return response.data.results
       })
   },
+  getGenreList(){
+    return initial.get('/genre/movie/list')
+      .then(response => {
+        return response.data.genres
+      })
+  },
+  getFilmsByGenreId(genre){
+    return axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${genre}`)
+      .then(response => {
+        return response.data.results
+      })
+  }
 }

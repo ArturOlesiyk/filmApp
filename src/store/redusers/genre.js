@@ -1,14 +1,14 @@
-import {FILMS} from "../../constants/actionTypes"
+import {GENRE_LIST} from "../../constants/actionTypes"
 
 let initialState = {
-  films: []
+  genreList: []
 }
 const films = (state = initialState, action) => {
   switch (action.type) {
-    case FILMS: {
+    case GENRE_LIST: {
       return {
         ...state,
-        films: action.films
+        genreList: action.genreList
       }
     }
     default:

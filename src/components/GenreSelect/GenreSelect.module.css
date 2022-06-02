@@ -1,0 +1,58 @@
+.wrapper {
+    width: 136px;
+    padding: 7px;
+    margin: 0;
+    display: flex;
+}
+
+.menu {
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menuList {
+    cursor: pointer;
+}
+
+.arrow {
+    margin-left: 40px;
+    color: #8659A5;
+}
+
+.subMenuList {
+    display: none;
+    width: 100%;
+    max-height: 60px;
+    position: absolute;
+    left: 0;
+    top: -3px;
+    padding-top: 20px;
+    padding-left: 0;
+    z-index: 1;
+}
+
+.subMenuList li {
+    background-color: #fff;
+    width: 100%;
+}
+
+.subMenuList > li:hover {
+    background-color: silver;
+    cursor: pointer;
+}
+
+.wrapper:hover {
+    background-color: silver;
+    cursor: pointer;
+}
+
+.menu:hover .subMenuList {
+    display: block;
+}

@@ -1,10 +1,108 @@
 .itemWrap {
-    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.item {
+    max-width: 200px;
+    width: 100%;
+    margin: 20px;
+    background-color: white;
     position: relative;
 }
 
-img{
+img {
     width: 100%;
-    height: 100%;
     object-fit: cover;
 }
+
+.description {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.textArea {
+    display: flex;
+    flex-direction: column;
+    margin: 7px;
+}
+
+.title {
+    font-family: Arial;
+    color: black;
+    max-width: 140px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-overflow: ellipsis;
+}
+
+.genres {
+    font-size: 11px;
+    bottom: 0;
+    color: #8659A5;
+}
+
+.vote {
+    height: 25px;
+    border: solid 2px #8659A5;
+    padding: 3px;
+    color: #8659A5;
+    margin: 7px;
+}
+
+.buttons {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.item:hover .buttons {
+    display: block;
+}
+
+.playButton {
+    margin-left: auto;
+}
+
+.playIcon {
+    color: #8659A5;
+    font-size: 60px;
+    margin-inline-start: 65px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.playText {
+    font-size: 2em;
+    color: white;
+    margin-inline-start: 60px;
+    cursor: pointer;
+
+}
+.viewInfo{
+    font-size: 1em;
+    color: white;
+    width: 40%;
+    height: 25px;
+    background-color: #8659A5;
+    border-radius: 5px;
+    margin-inline-start: 60px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.viewInfo p{
+    margin: 5px;
+}
+

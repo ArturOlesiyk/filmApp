@@ -11,3 +11,12 @@ export const getFilms = (filmType) => {
       })
   }
 }
+
+export const getFilmsByGenreId = (genre) => {
+  return (dispatch) => {
+    filmsAPI.getFilmsByGenreId(genre)
+      .then(films => {
+        dispatch(setFilms(films))
+      })
+  }
+}
