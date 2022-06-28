@@ -3,7 +3,7 @@ import API_KEY from "../constants/api";
 
 const initial = axios.create({
   baseURL: "https://api.themoviedb.org/3/",
-  params:{
+  params: {
     api_key: API_KEY,
     language: "en-US"
   }
@@ -16,16 +16,30 @@ export const filmsAPI = {
         return response.data.results
       })
   },
-  getGenreList(){
+  getGenreList() {
     return initial.get('/genre/movie/list')
       .then(response => {
         return response.data.genres
       })
   },
-  getFilmsByGenreId(genre){
-    return axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${genre}`)
+  getFilmsByGenreId(genre) {
+    return initial.get(`/discover/movie`, {
+      params: {
+        with_genres: genre
+      }
+    })
       .then(response => {
         return response.data.results
+      })
+  },
+  getVideos(movieId) {
+    return initial.get(`/movie/${movieId}`, {
+      params: {
+        append_to_response: 'videos'
+      }
+    })
+      .then(response => {
+        return response.data.videos.results
       })
   }
 }

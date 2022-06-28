@@ -1,11 +1,12 @@
-.container{
+.container {
     display: flex;
     width: 80%;
     padding: 5px;
     margin: 30px auto 0;
     border-bottom: solid silver 1px;
 }
-.container a{
+
+.container a {
     font-size: 1.1em;
     font-family: Arial;
     font-weight: lighter;
@@ -15,24 +16,27 @@
     height: 100%;
 }
 
-.container>a:hover{
+.container > a:hover {
     background-color: silver;
 }
 
-.container>a:focus{
-   border-bottom: solid #8659A5 2px;
+.container > a:focus {
+    border-bottom: solid #8659A5 2px;
 }
-.switchingStyle{
+
+.switchingStyle {
     padding: 7px;
     margin-left: auto;
     font-size: 20px;
     cursor: pointer;
 }
-.active{
+
+.active {
     margin-right: 7px;
-    color: rgba(0,0,0,0.6);
+    color: rgba(0, 0, 0, 0.6);
 }
-.inactive{
+
+.inactive {
     margin-right: 7px;
     color: #8659A5;
 }

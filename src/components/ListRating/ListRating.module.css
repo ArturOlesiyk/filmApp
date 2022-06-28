@@ -1,19 +1,23 @@
-.listContainer{
+.listContainer {
     display: flex;
     width: 35%;
     justify-content: space-between;
     font-size: 20px;
 }
-.completed{
+
+.completed {
     color: #8659A5;
 }
-.uncompleted{
+
+.uncompleted {
     color: silver;
 }
-.uncompleted:hover{
+
+.uncompleted:hover {
     color: #8659A5;
 }
-.rating{
+
+.rating {
     font-size: 18px;
     border: solid 2px #8659A5;
     border-radius: 2px;

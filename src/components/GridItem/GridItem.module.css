@@ -91,7 +91,8 @@ img {
     cursor: pointer;
 
 }
-.viewInfo{
+
+.viewInfo {
     font-size: 1em;
     color: white;
     width: 40%;
@@ -102,7 +103,19 @@ img {
     margin-top: 30px;
     cursor: pointer;
 }
-.viewInfo p{
+
+.viewInfo p {
     margin: 5px;
+}
+
+.overview p {
+    color: white;
+    max-height: 150px;
+    overflow: auto;
+}
+
+.closeOverview {
+    color: white;
+    font-size: 20px;
 }
 

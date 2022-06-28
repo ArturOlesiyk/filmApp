@@ -7,7 +7,7 @@ const ListRating = ({vote_avarage}) => {
   const roundedVote = Math.round(vote_avarage)
 
   const renderStars = () => (Array.from({length: 10}, (v, k) => (
-    <MdOutlineStarPurple500 key={k} className={k < roundedVote ? style.completed : style.uncompleted}/>
+      <MdOutlineStarPurple500 key={k} className={k < roundedVote ? style.completed : style.uncompleted}/>
     )
   ))
 

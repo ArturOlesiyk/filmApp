@@ -1,12 +1,14 @@
 import React from "react"
 import style from './Header.module.css'
+import {RiMovie2Fill} from "react-icons/ri";
 
-const Header = () =>{
-
-  return(
+const Header = () => {
+  return (
     <div className={style.wrapper}>
-      <div>LOGO</div>
-      <div>Login</div>
+      <div className={style.logoContainer}>
+        <RiMovie2Fill className={style.icon}/>
+        <span className={style.logo}>GOOD FILMS</span>
+      </div>
     </div>
   )
 }
