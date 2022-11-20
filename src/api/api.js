@@ -11,7 +11,11 @@ const initial = axios.create({
 
 export const filmsAPI = {
   getFilms(filmType, page) {
-    return initial.get(filmType)
+    return initial.get(`/movie${filmType}`, {
+      params: {
+        page: page
+      }
+    })
       .then(response => {
         return response.data.results
       })
@@ -22,10 +26,11 @@ export const filmsAPI = {
         return response.data.genres
       })
   },
-  getFilmsByGenreId(genre) {
+  getFilmsByGenreId(genre, page) {
     return initial.get(`/discover/movie`, {
       params: {
-        with_genres: genre
+        with_genres: genre,
+        page: page
       }
     })
       .then(response => {

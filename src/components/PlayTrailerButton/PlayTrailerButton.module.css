@@ -1,0 +1,32 @@
+.playButton {
+    margin-left: auto;
+}
+
+.playIcon {
+    color: #8659A5;
+    font-size: 60px;
+    margin-inline-start: 65px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.playText {
+    font-size: 2em;
+    color: white;
+    margin-inline-start: 60px;
+    cursor: pointer;
+
+}
+.buttonWatchNow{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 5px;
+    width: 100px;
+    border-radius: 10px;
+    border-color: #8659A5;
+    background-color: #8659A5;
+    color: white;
+    cursor: pointer;
+}

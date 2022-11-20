@@ -1,30 +1,32 @@
 import React, {useState} from "react";
-import style from './GenreSelect.module.css'
 import {BsChevronDown} from 'react-icons/bs'
+import {useNavigate} from "react-router-dom";
+import style from './GenreSelect.module.css'
 
-const GenreSelect = ({genreList, onClickFilmsByGenreId}) => {
+const GenreSelect = ({genreList, selectedGenre, setSelectedGenre}) => {
 
-  const [selectedGenre, setSelectedGenre] = useState('Genre')
+  const navigate = useNavigate()
 
   const genres = genreList.map(genre =>
-    <li key={genre.id}>
-      <a onClick={() => {
+    <div key={genre.id}>
+      <div className={style.dropdownItem}
+        onClick={() => {
         setSelectedGenre(genre.name)
-        onClickFilmsByGenreId(genre.id)
-      }}>{genre.name}</a>
-    </li>)
+        navigate(`/genre/${genre.id}`)}}>
+        {genre.name}
+      </div>
+    </div>)
 
   return (
-    <div className={style.wrapper}>
-      <nav className={style.menu}>
-        <div className={style.menuList}>
-          <a>{selectedGenre}</a>
+    <div className={selectedGenre == 'Genre' ? style.dropdown : style.activeDropdown}>
+        <div className={style.dropdownSelector}>
+          <div>{selectedGenre}</div>
+
           <BsChevronDown className={style.arrow}/>
         </div>
-        <ul className={style.subMenuList}>
+        <div className={style.dropdownContent}>
           {genres}
-        </ul>
-      </nav>
+        </div>
     </div>
   )
 }

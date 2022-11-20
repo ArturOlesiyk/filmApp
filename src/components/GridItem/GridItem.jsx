@@ -1,26 +1,25 @@
 import React, {useState} from 'react';
 import BASE_IMAGE_URL from "../../constants/baseImageUrl";
-import style from './GridItem.module.css'
-import FilmGenre from "../FilmGenre/FilmGenre";
-import {BsFillPlayCircleFill} from "react-icons/bs";
 import {IoMdClose} from "react-icons/io";
+import noPosterImg from '../../assets/img/no-poster-available.jpg';
+import GridItemDescription from "../GridItemDescription/GridItemDescription";
+import PlayTrailerButton from "../PlayTrailerButton/PlayTrailerButton";
+import style from './GridItem.module.css';
 
-const GridItem = ({films, genreList, onShow}) => {
-
+const GridItem = ({films, onShow, itemStyle}) => {
   const [viewInfo, setViewInfo] = useState(false)
 
   return (
     <div className={style.itemWrap}>
       {films.map(item =>
         <div className={style.item} key={item.id}>
-          <img src={BASE_IMAGE_URL + item.poster_path}/>
+          <img src={item.poster_path ? BASE_IMAGE_URL + item.poster_path : noPosterImg}/>
+
           <div className={style.buttons}>
             {!viewInfo ?
               <>
-                <div className={style.playBotton}>
-                  <BsFillPlayCircleFill className={style.playIcon} onClick={() => onShow(item.id)}/>
-                  <div className={style.playText}>PLAY</div>
-                </div>
+                <PlayTrailerButton onShow={onShow} filmId={item.id} itemStyle={itemStyle}/>
+
                 <div className={style.viewInfo} onClick={() => setViewInfo(!viewInfo)}>
                   <p>View Info</p>
                 </div>
@@ -29,23 +28,14 @@ const GridItem = ({films, genreList, onShow}) => {
               <div className={style.overview}>
                 <IoMdClose className={style.closeOverview}
                            onClick={() => setViewInfo(!viewInfo)}/>
+
                 <p>{item.overview}</p>
               </div>
             }
           </div>
-          <div className={style.description}>
-            <div className={style.textArea}>
-              <div className={style.title}>
-                {item.title}
-              </div>
-              <div className={style.genres}>
-                <FilmGenre genre_ids={item.genre_ids} genreList={genreList}/>
-              </div>
-            </div>
-            <div className={style.vote}>
-              {item.vote_average}
-            </div>
-          </div>
+          <GridItemDescription title={item.title}
+                               genreIds={item.genre_ids}
+                               vote={item.vote_average}/>
         </div>
       )}
     </div>

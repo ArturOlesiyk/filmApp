@@ -1,32 +1,37 @@
 import React from 'react';
-import BASE_IMAGE_URL from "../../constants/baseImageUrl";
-import style from './ListItem.module.css'
-import FilmGenre from "../FilmGenre/FilmGenre";
-import {BsFillPlayCircleFill} from "react-icons/bs";
+import FilmsGenres from "../FilmGenre/FilmsGenres";
 import ListRating from "../ListRating/ListRating";
+import BASE_IMAGE_URL from "../../constants/baseImageUrl";
+import noPosterImg from '../../assets/img/no-poster-available.jpg'
+import PlayTrailerButton from "../PlayTrailerButton/PlayTrailerButton";
+import style from './ListItem.module.css'
 
-const ListItem = ({films, genreList, onShow}) => {
+const ListItem = ({films, onShow}) => {
+
   return (
     <div className={style.itemWrap}>
       {films.map(item =>
         <div className={style.item} key={item.id}>
-          <img src={BASE_IMAGE_URL + item.backdrop_path}/>
+          <img src={item.backdrop_path ? BASE_IMAGE_URL+item.backdrop_path : noPosterImg}/>
+
           <div className={style.description}>
             <div className={style.title}>
               {item.title}
             </div>
+
             <div className={style.genres}>
-              <FilmGenre genre_ids={item.genre_ids} genreList={genreList}/>
+              <FilmsGenres genre_ids={item.genre_ids}/>
             </div>
+
             <div className={style.vote}>
-              <ListRating vote_avarage={item.vote_average}/>
+              <ListRating vote_average={item.vote_average}/>
             </div>
+
             <div className={style.overview}>
               <p>{item.overview}</p>
             </div>
-            <button className={style.buttonWatchNow} onClick={() => onShow(item.id)}>
-              Watch Now
-            </button>
+
+            <PlayTrailerButton filmId={item.id} onShow={onShow} itemStyle={true}/>
           </div>
         </div>
       )}

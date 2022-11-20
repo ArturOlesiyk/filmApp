@@ -1,0 +1,44 @@
+.description {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.textArea {
+    display: flex;
+    flex-direction: column;
+    margin: 7px;
+}
+
+.title {
+    font-family: Arial;
+    color: black;
+    max-width: 140px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-overflow: ellipsis;
+}
+
+.genres {
+    margin-top: 7px;
+    font-size: 11px;
+    bottom: 0;
+    color: #8659A5;
+}
+
+.vote {
+    display: flex;
+    justify-content: space-around;
+    height: 25px;
+    width: 25px;
+    border: solid 2px #8659A5;
+    padding: 3px;
+    color: #8659A5;
+    margin: 7px;
+}

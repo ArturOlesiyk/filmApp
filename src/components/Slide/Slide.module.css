@@ -1,29 +1,33 @@
-.itemWrap {
-    display: flex;
-    flex-direction: column;
-}
-
 .item {
-    max-width: 750px;
-    margin-top: 20px;
-    min-height: 400px;
+    width: 100%;
+    height: 500px;
     background-color: white;
     position: relative;
+    overflow: hidden;
 }
 
-img {
+.poster {
     width: 100%;
     object-fit: cover;
+    min-height: 500px;
 }
 
 .description {
+    display: flex;
+    justify-content: space-between;
     position: absolute;
-    bottom: 0;
     width: 100%;
     height: 100%;
+    top: 0;
+    background-color: rgba(0,0,0,0.7);
+    padding-left: 20px;
+    padding-top: 300px;
+}
+
+.leftCase {
     display: flex;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.7);
+    width: 40%;
 }
 
 .title {
@@ -36,35 +40,32 @@ img {
     text-transform: uppercase;
     font-weight: bold;
     text-overflow: ellipsis;
-    margin-top: 40px;
-    margin-left: 20px;
 }
 
 .genres {
     font-size: 1em;
-    bottom: 0;
     color: #8659A5;
-    margin-left: 20px;
 }
 
-.vote {
-    height: 25px;
-    padding: 3px;
-    color: #8659A5;
-    margin-left: 20px;
+.date {
+    color: white;
 }
 
 .overview {
     font-family: Arial;
     font-size: 1em;
     color: white;
-    max-width: 400px;
+    max-width: 250px;
     max-height: 120px;
     margin-left: 20px;
     margin-top: 10px;
     overflow: auto;
     text-overflow: ellipsis;
+    margin-right: 200px;
+    background-color: rgba(0,0,0,0.8);
+    padding: 10px;
 }
+
 
 
 

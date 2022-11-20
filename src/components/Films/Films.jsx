@@ -1,33 +1,28 @@
 import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from "react-redux";
-import {getFilms} from "../../store/actions/films";
+import {useLocation, useParams} from "react-router-dom";
+import {getFilms, resetFilms} from "../../store/actions/films";
 import GridItem from "../GridItem/GridItem";
-import style from './Films.module.css'
 import ListItem from "../ListItem/ListItem";
+import style from './Films.module.css'
+import Preloader from "../Proloader/Preloader";
 
-const Films = ({filmPath, itemStyle, onShow}) => {
-
-  const genreList = useSelector(state => state.genre.genreList)
-  const films = useSelector(state => state.films.films)
-
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(getFilms(filmPath))
-  }, [filmPath])
+const Films = ({itemStyle, onShow, loading, genreList, films}) => {
 
   if (itemStyle) {
     return (
       <div className={style.filmsContainer}>
-        <ListItem films={films} genreList={genreList} onShow={onShow}/>
+        <ListItem films={films} genreList={genreList} onShow={onShow} itemStyle={itemStyle}/>
+        {loading && <Preloader/>}
       </div>
     )
   }
   return (
     <div className={style.filmsContainer}>
-      <GridItem films={films} genreList={genreList} onShow={onShow}/>
+      <GridItem films={films} genreList={genreList} onShow={onShow} itemStyle={itemStyle}/>
+      {loading && <Preloader/>}
     </div>
   )
 }
 
-export default Films
+export default Films;

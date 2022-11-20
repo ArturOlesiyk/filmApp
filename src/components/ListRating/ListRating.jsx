@@ -1,10 +1,10 @@
 import React from "react"
-import style from "./ListRating.module.css"
 import {MdOutlineStarPurple500} from "react-icons/md";
+import style from "./ListRating.module.css"
 
-const ListRating = ({vote_avarage}) => {
+const ListRating = ({vote_average}) => {
 
-  const roundedVote = Math.round(vote_avarage)
+  const roundedVote = Math.round(vote_average)
 
   const renderStars = () => (Array.from({length: 10}, (v, k) => (
       <MdOutlineStarPurple500 key={k} className={k < roundedVote ? style.completed : style.uncompleted}/>
@@ -16,8 +16,9 @@ const ListRating = ({vote_avarage}) => {
       <div className={style.stars}>
         {renderStars()}
       </div>
+
       <div className={style.rating}>
-        {vote_avarage}
+        {vote_average}
       </div>
     </div>
   )

@@ -1,3 +1,5 @@
-export const FILMS = 'FILMS'
+export const CONCAT_FILMS = 'CONCAT_FILMS'
+export const RESET_FILMS = 'RESET_FILMS'
 export const GENRE_LIST = 'GENRE_LIST'
 export const VIDEOS = 'VIDEOS'
+export const SET_LOADING_STATUS = 'SET_LOADING_STATUS'
