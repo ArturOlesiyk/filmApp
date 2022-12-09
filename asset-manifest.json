@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/filmApp/static/css/main.52f9b7ff.css",
-    "main.js": "/filmApp/static/js/main.50267399.js",
+    "main.js": "/filmApp/static/js/main.64eefecc.js",
     "static/media/no-poster-available.jpg": "/filmApp/static/media/no-poster-available.7555b15218a0f4733bf7.jpg",
     "index.html": "/filmApp/index.html",
     "main.52f9b7ff.css.map": "/filmApp/static/css/main.52f9b7ff.css.map",
-    "main.50267399.js.map": "/filmApp/static/js/main.50267399.js.map"
+    "main.64eefecc.js.map": "/filmApp/static/js/main.64eefecc.js.map"
   },
   "entrypoints": [
     "static/css/main.52f9b7ff.css",
-    "static/js/main.50267399.js"
+    "static/js/main.64eefecc.js"
   ]
 }
