@@ -6,6 +6,9 @@ const routes = [{
   path: '/',
   component: Films,
 }, {
+  path: '/filmApp',
+  component: Films,
+  }, {
   path: '/popular',
   component: Films,
 }, {
