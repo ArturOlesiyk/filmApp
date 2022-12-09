@@ -3,6 +3,7 @@ import {CONCAT_FILMS, RESET_FILMS, SET_LOADING_STATUS} from "../../constants/act
 
 const routesMap = {
   '/': '/popular',
+  '/filmApp/': '/popular',
   '/popular': '/popular',
   '/top_rated': '/top_rated',
   '/upcoming': '/upcoming'
